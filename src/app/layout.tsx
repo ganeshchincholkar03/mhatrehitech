@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <NextTopLoader color="#FF4D7E" />
 
         <DonationProvider>
-          <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          <ThemeProvider attribute="class">
             <Aoscompo>
               <Header />
               {children}
