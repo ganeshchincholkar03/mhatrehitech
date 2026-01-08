@@ -31,16 +31,20 @@ const Services = () => {
           {cardsData.map((card) => (
             <Card
               key={card.id}
-              className="bg-white/95 backdrop-blur rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               placeholder={undefined}
               onPointerEnterCapture={() => {}}
               onPointerLeaveCapture={() => {}}
+              onResize={() => {}}
+              onResizeCapture={() => {}}
+              className="bg-white/95 backdrop-blur rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               <CardHeader
                 className="relative h-48 rounded-t-2xl overflow-hidden"
                 placeholder={undefined}
                 onPointerEnterCapture={() => {}}
                 onPointerLeaveCapture={() => {}}
+                onResize={() => {}}
+                onResizeCapture={() => {}}
               >
                 <img
                   src={card.image}
@@ -53,12 +57,16 @@ const Services = () => {
                 placeholder={undefined}
                 onPointerEnterCapture={() => {}}
                 onPointerLeaveCapture={() => {}}
+                onResize={() => {}}
+                onResizeCapture={() => {}}
               >
                 <Typography
                   variant="h5"
                   color="blue-gray"
                   className="mb-2 text-lg font-semibold"
                   placeholder={undefined}
+                  onResize={() => {}}
+                  onResizeCapture={() => {}}
                   onPointerEnterCapture={() => {}}
                   onPointerLeaveCapture={() => {}}
                 >
@@ -68,6 +76,8 @@ const Services = () => {
                 <Typography
                   className="text-sm text-gray-600 leading-relaxed"
                   placeholder={undefined}
+                  onResize={() => {}}
+                  onResizeCapture={() => {}}
                   onPointerEnterCapture={() => {}}
                   onPointerLeaveCapture={() => {}}
                 >
