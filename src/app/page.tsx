@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <main className="relative overflow-hidden">
       {/* subtle background glow */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.08),_transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.08),transparent_50%)]" />
 
       <Hero />
       <Services />
