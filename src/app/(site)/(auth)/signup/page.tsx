@@ -13,7 +13,7 @@ const SignupPage = () => {
 
       <div className="dark:bg-dark">
         <div className="px-4 container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) py-5">
-          <SignUp />
+          {/* <SignUp /> */}
         </div>
       </div>
     </>
