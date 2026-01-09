@@ -8,15 +8,13 @@ export const metadata: Metadata = {
 };
 
 const BlogPage = () => {
-    return (
-        <>
-            <HeroSub
-                title="Blog"
-            />
-            <BlogList />
-            <Volunteer />
-        </>
-    );
+  return (
+    <>
+      <HeroSub title="Blog" />
+      <BlogList />
+      {/* <Volunteer /> */}
+    </>
+  );
 };
 
 export default BlogPage;

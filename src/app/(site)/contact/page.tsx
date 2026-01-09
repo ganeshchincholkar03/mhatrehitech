@@ -5,6 +5,7 @@ import Volunteer from "@/components/SharedComponent/Volunteer";
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
+import WhyChooseUs from "@/components/Common/WhyChooseUs";
 export const metadata: Metadata = {
   title: "Contact | Mhatre-Hitech",
 };
@@ -16,7 +17,8 @@ const page = () => {
       <ContactInfo />
       <ContactForm />
       <Location />
-      <Volunteer />
+      <WhyChooseUs />
+      {/* <Volunteer /> */}
     </>
   );
 };

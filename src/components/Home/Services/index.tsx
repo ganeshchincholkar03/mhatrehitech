@@ -1,90 +1,54 @@
 "use client";
 
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Typography,
-} from "@material-tailwind/react";
-
 import { cardsData } from "@/components/Common/cardsData";
 
 const Services = () => {
   return (
-    <section className="container py-16 lg:py-28 bg-white dark:bg-dark mx-auto">
-      <div className="px-4 max-w-7xl">
+    <section className="py-20 bg-slate-50 dark:bg-slate-900">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl lg:text-4xl font-semibold mb-3">
-            Our Industry Solutions
+        <div className="text-center mb-14 max-w-2xl mx-auto">
+          <p className="text-primary font-medium mb-2">OUR SERVICES</p>
+          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-4">
+            Industry Solutions
           </h2>
-          <p className="text-gray-600 dark:text-white/60 text-base">
-            Delivering the Best Global Industry Services.
+          <p className="text-slate-600 dark:text-slate-400 text-base">
+            Delivering reliable and scalable solutions tailored to modern
+            industry needs.
           </p>
         </div>
-      </div>
-      <div className="relative mx-auto px-4">
-        {/* Section heading */}
 
         {/* Cards Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {cardsData.map((card) => (
-            <Card
+            <div
               key={card.id}
-              placeholder={undefined}
-              onPointerEnterCapture={() => {}}
-              onPointerLeaveCapture={() => {}}
-              onResize={() => {}}
-              onResizeCapture={() => {}}
-              className="bg-white/95 backdrop-blur rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="
+                group rounded-xl border border-slate-200/60 dark:border-white/10
+                bg-white/60 dark:bg-white/5 backdrop-blur-md
+                transition-all duration-300
+                hover:-translate-y-1 hover:shadow-md hover:ring-1 hover:ring-primary
+              "
             >
-              <CardHeader
-                className="relative h-48 rounded-t-2xl overflow-hidden"
-                placeholder={undefined}
-                onPointerEnterCapture={() => {}}
-                onPointerLeaveCapture={() => {}}
-                onResize={() => {}}
-                onResizeCapture={() => {}}
-              >
+              {/* Image */}
+              <div className="relative h-44 overflow-hidden rounded-t-xl">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-              </CardHeader>
+              </div>
 
-              <CardBody
-                placeholder={undefined}
-                onPointerEnterCapture={() => {}}
-                onPointerLeaveCapture={() => {}}
-                onResize={() => {}}
-                onResizeCapture={() => {}}
-              >
-                <Typography
-                  variant="h5"
-                  color="blue-gray"
-                  className="mb-2 text-lg font-semibold"
-                  placeholder={undefined}
-                  onResize={() => {}}
-                  onResizeCapture={() => {}}
-                  onPointerEnterCapture={() => {}}
-                  onPointerLeaveCapture={() => {}}
-                >
+              {/* Content */}
+              <div className="p-5">
+                <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-2">
                   {card.title}
-                </Typography>
-
-                <Typography
-                  className="text-sm text-gray-600 leading-relaxed"
-                  placeholder={undefined}
-                  onResize={() => {}}
-                  onResizeCapture={() => {}}
-                  onPointerEnterCapture={() => {}}
-                  onPointerLeaveCapture={() => {}}
-                >
+                </h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {card.description}
-                </Typography>
-              </CardBody>
-            </Card>
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

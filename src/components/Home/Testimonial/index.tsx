@@ -1,70 +1,94 @@
 "use client";
-import { Reviews } from "@/app/api/data";
+
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const testimonials = [
+  {
+    review:
+      "It is not only your professional approach that has always been appreciated by us, but also your personal commitment and genuineness in getting the work done in spite of all complications.",
+    clientName: "Gaurav Patil",
+    post: "CA (KPPM & Associates)",
+    clientImg: "/images/testimonials/gaurav.jpg",
+  },
+  {
+    review:
+      "Your dedication and expertise have made a significant difference to our business.",
+    clientName: "Priya Sharma",
+    post: "Business Owner",
+    clientImg: "/images/testimonials/priya.jpg",
+  },
+  // Add more testimonials as needed
+];
+
 const Testimonial = () => {
   const settings = {
-    autoplay: true,
     dots: true,
     arrows: false,
     infinite: true,
-    speed: 100,
-    slidesToShow: 2,
+    autoplay: true,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+    // adaptiveHeight: true,  // REMOVE this so height stays fixed
   };
+
   return (
-    <section className="lg:py-28 py-16 bg-grey dark:bg-darkmode">
-      <div className="container mx-auto lg:max-w-(--breakpoint-xl) px-4">
-        <h2
-          className="text-3xl font-medium mb-3 text-center"
-          data-aos="fade-left"
-        >
-          Check what our donators are saying
-        </h2>
-        <p className="text-base text-center text-muted dark:text-white/60 lg:max-w-60% mx-auto">
-          Discover heartfelt stories from our supporters who are helping us make
-          a difference. See how their contributions are changing lives and
-          inspiring hope!
-        </p>
-        <div className="mt-20">
-          <Slider {...settings}>
-            {Reviews.map((item, index) => (
+    <section className="py-20 bg-[url('/images/new-images/testimonials-bg-2.png')] bg-no-repeat bg-cover dark:bg-slate-900 bg-[#f0fbff]">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-10">
+        {/* Owner Photo - only visible on large screens */}
+        <div className="hidden lg:flex flex-1 justify-center lg:justify-start">
+          <Image
+            src="/images/new-images/my_images/director.png"
+            alt="Owner"
+            width={400}
+            height={500}
+            className="object-cover"
+            priority
+          />
+        </div>
+
+        {/* Testimonials */}
+        <div className="w-full lg:w-1/2">
+          <div className="mb-6 text-center lg:text-left">
+            <p className="text-primary font-medium mb-2">Testimonials</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+              What People say&apos;s About us
+            </h2>
+          </div>
+
+          <Slider {...settings} className="block w-full h-full">
+            {testimonials.map((item, idx) => (
               <div
-                key={index}
-                className="px-3"
-                data-aos="fade-up"
-                data-aos-delay={`${index * 180}`}
+                key={idx}
+                className="p-2 flex flex-col transition-all duration-300 mb-4"
               >
-                <div className="bg-white dark:bg-dark pt-12 pb-6 pr-16 pl-10 rounded-md relative">
-                  <div className="absolute bg-linear-to-r from-primary to-secondary py-2 pr-6 pl-24 top-11 left-0 flex">
-                    <div className="relative">
-                      <Image
-                        src={item.clientImg}
-                        alt={item.clientName}
-                        width={60}
-                        height={60}
-                        className="rounded-full absolute -top-4 -left-20"
-                      />
-                      <p className="text-white text-lg ">{item.clientName}</p>
-                    </div>
-                  </div>
-                  <p className="text-base text-muted dark:text-white/60 mt-24">
+                <div className="flex items-start gap-4">
+                  <span className="text-xl text-secondary font-bold mr-2">
+                    “
+                  </span>
+                  <p className="text-slate-700 dark:text-slate-300 text-lg italic">
                     {item.review}
                   </p>
-                  <h5 className="text-base pt-7 mt-7 relative before:content-[''] before:absolute before:w-28 before:h-px before:bg-border dark:before:bg-dark_border before:top-0 before:left-0">
-                    {item.post}
-                  </h5>
+                </div>
+                <div className="flex items-center gap-4 mt-6">
+                  {/* <Image
+                    src={item.clientImg}
+                    alt={item.clientName}
+                    width={48}
+                    height={48}
+                    className="rounded-full object-cover border border-slate-200 dark:border-white/20"
+                  /> */}
+                  <div>
+                    <h4 className="text-base font-semibold text-slate-900 dark:text-white">
+                      {item.clientName}
+                    </h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {item.post}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}

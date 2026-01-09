@@ -208,34 +208,16 @@ export const Eventdata: {
 
 export const footerLinks: { link: string }[] = [
   {
-    link: "Medical crowdfunding",
+    link: "About Us",
   },
   {
-    link: "Cancer Crowdfunding",
+    link: "Servies",
   },
   {
-    link: "Transplant Crowdfunding",
+    link: "Projects",
   },
   {
-    link: "Education Crowdfunding",
-  },
-  {
-    link: "Child Welfare",
-  },
-  {
-    link: "Medical Finance",
-  },
-  {
-    link: "FAQs & Help Center",
-  },
-  {
-    link: "Fundraiser Video",
-  },
-  {
-    link: "Trust & Safety",
-  },
-  {
-    link: "Plans & Pricing*",
+    link: "Gallery",
   },
 ];
 

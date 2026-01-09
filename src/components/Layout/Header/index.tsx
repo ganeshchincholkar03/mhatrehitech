@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useContext } from "react";
-import { headerData } from "../Header/Navigation/menuData";
+import { headerData } from "./Navigation/menuData";
 import Logo from "./Logo";
 import HeaderLink from "../Header/Navigation/HeaderLink";
 import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import DonationFormContext from "@/app/context/donationContext";
 import AuthDialogContext from "@/app/context/AuthDialogContext";
+import { HiHome } from "react-icons/hi2";
 
 // Social icons
 import {
@@ -63,25 +64,22 @@ const Header: React.FC = () => {
       {/* ================= TOP BAR ================= */}
       <div className="hidden lg:block fixed top-0 z-50 w-full bg-midnight_text text-white">
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-          {/* SOCIAL ICONS */}
-          <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-primary transition">
-              <FaFacebookF />
-            </Link>
-            <Link href="#" className="hover:text-primary transition">
-              <FaInstagram />
-            </Link>
-            <Link href="#" className="hover:text-primary transition">
-              <FaLinkedinIn />
-            </Link>
-            <Link href="#" className="hover:text-primary transition">
-              <FaTwitter />
-            </Link>
+          {/* COMPANY ADDRESS */}
+          <div className="flex items-center gap-3 max-w-[70%]">
+            <HiHome className="text-primary text-lg shrink-0" />
+            <p className="text-xs leading-snug">
+              <span className="font-semibold">
+                MHATRE HITECH (INDIA) PVT. LTD.
+              </span>
+              <br />
+              Gat No. 66, Village Ambethan, Tal- Khed, Dist.- Pune, Maharashtra,
+              India, 410501
+            </p>
           </div>
 
           {/* TIMING WITH LOTTIE */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 flex-shrink-0">
+            <div className="w-9 h-9 shrink-0">
               <DotLottieReact
                 src={timeLottie}
                 autoplay
@@ -104,7 +102,7 @@ const Header: React.FC = () => {
         bg-white/70 dark:bg-dark/70
         border-b border-white/30 dark:border-white/10
         ${sticky ? "shadow-md dark:shadow-darkmd" : ""}
-        lg:top-[44px] top-0`}
+        lg:top-11 top-0`}
       >
         {/* DESKTOP HEADER */}
         <div className="hidden lg:block bg-white/60 dark:bg-dark/60 backdrop-blur-md">

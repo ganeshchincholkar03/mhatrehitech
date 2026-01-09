@@ -7,8 +7,8 @@
   --container-screen-2xl: 83.75rem;
 
   --shadow-cause-shadow: 0px 4px 17px 0px #00000008;
-  --shadow-darkmd: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
-    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  --shadow-darkmd: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 12px 24px -4px;
 
   --transition-duration-150: 150ms;
 
@@ -37,21 +37,32 @@
   --z-index-2: 2;
   --z-index-999: 999;
 
-  --color-primary: #357df3;
-  --color-darkprimary: #28cf91;
-  --color-secondary: #1dc8cd;
-  --color-midnight_text: #263238;
-  --color-muted: #8d97b7;
-  --color-error: #ff4d7e;
-  --color-warning: #ff6a5b;
-  --color-light_grey: #e9ecef;
-  --color-grey: #f5f7fa;
-  --color-border: #e1e1e1;
-  --color-success: #3cd278;
-  --color-darkmode: #0a2219;
-  --color-darklight: #000f30;
-  --color-dark_border: #203535;
-  --color-dark: #00180f;
+  /* 🔴 BRAND COLORS (LOGO BASED) */
+  --color-primary: #d32011;
+  --color-darkprimary: #b91c1c;
+  --color-secondary: #ef4444;
+
+  /* 📝 TEXT */
+  --color-midnight_text: #1f2937;
+  --color-muted: #6b7280;
+
+  /* 🚦 STATUS */
+  --color-error: #dc2626;
+  --color-warning: #f97316;
+  --color-success: #16a34a;
+
+  /* 🧱 UI */
+  --color-light_grey: #f3f4f6;
+  --color-grey: #f9fafb;
+  --color-border: #e5e7eb;
+
+  /* 🌗 DARK MODE */
+  --color-darkmode: #0f172a;
+  --color-darklight: #020617;
+  --color-dark_border: #334155;
+  --color-dark: #020617;
+
+  /* 🌐 BACKGROUND */
   --color-background: 255, 255, 255;
   --tw-bg-opacity: 1;
 }
@@ -131,4 +142,14 @@ body {
 
 .bg-background {
   background: rgb(var(--color-background) / var(--tw-bg-opacity));
+}
+
+/* Gap between vertical slick slides */
+.testimonial-vertical-slider.slick-vertical .slick-slide {
+  margin-bottom: 1.5rem; /* adjust gap here */
+}
+
+/* Prevent last slide from being cut off */
+.testimonial-vertical-slider .slick-list {
+  padding-bottom: 1.5rem;
 }
