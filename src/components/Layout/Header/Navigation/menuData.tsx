@@ -2,10 +2,7 @@ import { HeaderItem } from "@/types/menu";
 
 export const headerData: HeaderItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "About",
-    href: "/about",
-  },
+
   {
     label: "Services",
     href: "/services",
@@ -25,6 +22,10 @@ export const headerData: HeaderItem[] = [
         href: "/services/painting-and-protective",
       },
     ],
+  },
+  {
+    label: "About",
+    href: "/about",
   },
   {
     label: "Blog",

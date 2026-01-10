@@ -1,3 +1,4 @@
+import AboutOverview from "@/components/About";
 import WhyChooseUs from "@/components/Common/WhyChooseUs";
 import GrowWithUsSection from "@/components/Home/GrowWithUs";
 import ProjectShowcase from "@/components/Home/ProjectShowcase";
@@ -73,6 +74,7 @@ export default function TeamSection() {
           { label: "About Us", href: "/about" },
         ]}
       />
+      <AboutOverview />
       <section className="py-16 bg-grey dark:bg-darkmode">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-midnight_text dark:text-white mb-12">
