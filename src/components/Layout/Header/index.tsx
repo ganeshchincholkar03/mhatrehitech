@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useContext } from "react";
 import { headerData } from "./Navigation/menuData";
 import Logo from "./Logo";
@@ -25,16 +24,19 @@ const Header: React.FC = () => {
   useContext(DonationFormContext);
   useContext(AuthDialogContext);
 
+  // Sticky header for desktop
   useEffect(() => {
     const onScroll = () => setSticky(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Body scroll lock when mobile drawer open
   useEffect(() => {
     document.body.style.overflow = navbarOpen ? "hidden" : "";
   }, [navbarOpen]);
 
+  // Click outside mobile drawer
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
@@ -50,19 +52,35 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* ================= HEADER BLOCK (Top bar + Main nav) ================= */}
+      {/* ================= MOBILE HEADER (always visible on mobile) ================= */}
+      <div className="lg:hidden fixed top-0 left-0 w-full z-50 bg-white dark:bg-dark px-4 py-2 flex items-center justify-between shadow">
+        <Logo />
+        <button onClick={() => setNavbarOpen(true)} className="p-2">
+          <span className="block w-6 h-0.5 bg-black dark:bg-white" />
+          <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5" />
+          <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5" />
+        </button>
+      </div>
+
+      {/* Add top padding to content on mobile so it doesn't hide under mobile header */}
+      {/* You can do this in layout.tsx: <main className="pt-12 lg:pt-0"> */}
+
+      {/* ================= DESKTOP HEADER (Top bar + Main nav) ================= */}
       <header
-        className={`w-full z-50 transition-all duration-500 ease-in-out
-      ${
-        sticky
-          ? "fixed top-0 left-0 shadow-md dark:shadow-darkmd backdrop-blur-xl bg-white/80 dark:bg-dark/80 opacity-100 translate-y-0"
-          : "static opacity-0 -translate-y-8 lg:opacity-100 lg:translate-y-0"
-      }
-      `}
+        className={`
+          hidden lg:block w-full z-50
+          transition-all duration-400 ease-in-out
+          ${
+            sticky
+              ? "fixed top-0 left-0 shadow-md dark:shadow-darkmd backdrop-blur-xl bg-white/80 dark:bg-dark/80"
+              : "static bg-transparent"
+          }
+        `}
       >
         {/* TOP BAR */}
-        <div className="hidden lg:block bg-midnight_text text-white">
+        <div className="bg-midnight_text text-white">
           <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+            {/* COMPANY ADDRESS */}
             <div className="flex items-center gap-3 max-w-[70%]">
               <HiHome className="text-primary text-lg shrink-0" />
               <p className="text-xs leading-snug">
@@ -74,6 +92,8 @@ const Header: React.FC = () => {
                 Maharashtra, India, 410501
               </p>
             </div>
+
+            {/* TIMING WITH LOTTIE */}
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 shrink-0">
                 <DotLottieReact
@@ -92,15 +112,19 @@ const Header: React.FC = () => {
         </div>
 
         {/* MAIN NAV */}
-        <div className="hidden lg:block bg-white/60 dark:bg-dark/60 backdrop-blur-md">
+        <div className="bg-white/60 dark:bg-dark/60 backdrop-blur-md">
           <div className="container mx-auto px-4 py-3">
             <div className="flex items-center justify-between">
               <Logo />
+
+              {/* NAV LINKS */}
               <div className="flex items-center gap-2">
                 {headerData.map((item, index) => (
                   <HeaderLink key={index} item={item} />
                 ))}
               </div>
+
+              {/* CONTACT INFO */}
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-6">
                   {/* EMAIL */}
@@ -151,59 +175,44 @@ const Header: React.FC = () => {
                       </Link>
                     </div>
                   </div>
-                </div>{" "}
+                </div>
               </div>
+              {/* END CONTACT INFO */}
             </div>
           </div>
-        </div>
-
-        {/* MOBILE HEADER */}
-        <div className="lg:hidden bg-white dark:bg-dark px-4 py-2 flex items-center justify-between">
-          <Logo />
-          <button onClick={() => setNavbarOpen(true)} className="p-2">
-            <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
-            <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5"></span>
-            <span className="block w-6 h-0.5 bg-black dark:bg-white mt-1.5"></span>
-          </button>
         </div>
       </header>
 
-      {/* OVERLAY & MOBILE DRAWER (unchanged) */}
+      {/* ================= MOBILE OVERLAY & DRAWER ================= */}
       {navbarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
           onClick={() => setNavbarOpen(false)}
         />
       )}
+
       <aside
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 h-screen w-full max-w-xs
-        bg-slate-50 dark:bg-dark shadow-xl
-        transform transition-transform duration-300 ease-in-out
-        ${navbarOpen ? "translate-x-0" : "translate-x-full"}
-        z-50 lg:hidden`}
+        className={`
+          fixed top-0 right-0 h-screen w-full max-w-xs
+          bg-slate-50 dark:bg-dark shadow-xl
+          transform transition-transform duration-300 ease-in-out
+          ${navbarOpen ? "translate-x-0" : "translate-x-full"}
+          z-50 lg:hidden
+        `}
       >
-        <aside
-          ref={mobileMenuRef}
-          className={`fixed top-0 right-0 h-screen w-full max-w-xs
-        bg-slate-50 dark:bg-dark shadow-xl
-        transform transition-transform duration-300 ease-in-out
-        ${navbarOpen ? "translate-x-0" : "translate-x-full"}
-        z-50 lg:hidden`}
-        >
-          <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-4 border-b">
-              <h2 className="text-lg font-bold">Menu</h2>
-              <button onClick={() => setNavbarOpen(false)}>✕</button>
-            </div>
-
-            <nav className="flex-1 overflow-y-auto p-4 space-y-2">
-              {headerData.map((item, index) => (
-                <MobileHeaderLink key={index} item={item} />
-              ))}
-            </nav>
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-4 border-b">
+            <h2 className="text-lg font-bold">Menu</h2>
+            <button onClick={() => setNavbarOpen(false)}>✕</button>
           </div>
-        </aside>
+
+          <nav className="flex-1 overflow-y-auto p-4 space-y-2">
+            {headerData.map((item, index) => (
+              <MobileHeaderLink key={index} item={item} />
+            ))}
+          </nav>
+        </div>
       </aside>
     </>
   );
