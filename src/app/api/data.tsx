@@ -223,6 +223,10 @@ export const footerLinks: { link: string; href: string }[] = [
     link: "Contact",
     href: "/contact",
   },
+  {
+    link: "Career",
+    href: "/career",
+  },
 ];
 
 export const Reviews: {

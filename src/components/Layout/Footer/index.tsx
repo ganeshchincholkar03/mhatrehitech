@@ -29,7 +29,7 @@ const Footer: FC = () => {
   ];
 
   return (
-    <footer className="pt-16 dark:bg-dark bg-[url(https://mhatrehitech.com/backend/images/dots.png)]">
+    <footer className="pt-16 dark:bg-dark bg-[url(/images/new-images/)]">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-8 pb-10">
           {/* ===== COMPANY INFO ===== */}
