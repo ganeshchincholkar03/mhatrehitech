@@ -183,7 +183,27 @@ const Header: React.FC = () => {
         ${navbarOpen ? "translate-x-0" : "translate-x-full"}
         z-50 lg:hidden`}
       >
-        {/* ...mobile menu... */}
+        <aside
+          ref={mobileMenuRef}
+          className={`fixed top-0 right-0 h-screen w-full max-w-xs
+        bg-slate-50 dark:bg-dark shadow-xl
+        transform transition-transform duration-300 ease-in-out
+        ${navbarOpen ? "translate-x-0" : "translate-x-full"}
+        z-50 lg:hidden`}
+        >
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-between p-4 border-b">
+              <h2 className="text-lg font-bold">Menu</h2>
+              <button onClick={() => setNavbarOpen(false)}>✕</button>
+            </div>
+
+            <nav className="flex-1 overflow-y-auto p-4 space-y-2">
+              {headerData.map((item, index) => (
+                <MobileHeaderLink key={index} item={item} />
+              ))}
+            </nav>
+          </div>
+        </aside>
       </aside>
     </>
   );
