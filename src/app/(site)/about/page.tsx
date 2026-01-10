@@ -1,45 +1,62 @@
+import WhyChooseUs from "@/components/Common/WhyChooseUs";
+import GrowWithUsSection from "@/components/Home/GrowWithUs";
+import ProjectShowcase from "@/components/Home/ProjectShowcase";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import Image from "next/image";
 
-const team = [
+const team: {
+  id: number;
+  name: string;
+  position: string;
+  image: string;
+  highlight?: boolean;
+}[] = [
   {
+    id: 1,
     name: "Mr. Sandesh Mhatre",
     position: "Director",
-    image: "/images/new-images/my_images/aboout-director_1.jpg",
+    image: "/images/new-images/my_images/about-director_1.jpg",
     highlight: true,
   },
   {
+    id: 2,
     name: "Ms. Jyoti Mhatre",
     position: "Executive Director",
-    image: "/images/new-images/my_images/aboout-director_2.jpg",
+    image: "/images/new-images/my_images/about-director_2.jpg",
     highlight: true,
   },
   {
+    id: 3,
     name: "Mr. Amol Jadhav",
     position: "Plant Head",
-    image: "/images/new-images/my_images/amol-jadhav.jpg",
+    image: "/images/new-images/my_images/Amol-Jadhav.jpg",
   },
   {
+    id: 4,
     name: "Mr. Rahul Gadekar",
     position: "Sr. Business & Development Head (Unit-II)",
     image: "/images/new-images/mhatre/rahul-gadekar.jpg",
   },
   {
+    id: 5,
     name: "Mr. Sushant Surve",
     position: "Sr. Business & Development Head (Unit-III)",
     image: "/images/new-images/mhatre/sushant-surve.jpg",
   },
   {
+    id: 6,
     name: "Mr. Snehit Pisal",
     position: "Sr. Business & Development Head (Unit-IV)",
     image: "/images/new-images/mhatre/snehit-pisal.jpg",
   },
   {
+    id: 7,
     name: "Mr. Shankar Londhe",
     position: "Operation Head",
     image: "/images/new-images/mhatre/shankar-londhe.jpg",
   },
   {
+    id: 8,
     name: "Mr. Vijay Kadam",
     position: "Design Head (Unit-I)",
     image: "/images/new-images/mhatre/vijay-kadam.jpg",
@@ -90,6 +107,9 @@ export default function TeamSection() {
           </div>
         </div>
       </section>
+      <ProjectShowcase />
+      <WhyChooseUs />
+      <GrowWithUsSection />
     </>
   );
 }

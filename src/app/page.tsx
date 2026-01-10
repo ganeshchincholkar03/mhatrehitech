@@ -1,12 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import Hero from "@/components/Home/Hero";
-import Causes from "@/components/Home/Causes";
-import FutureEvents from "@/components/Home/FutureEvents";
-import UrgentDonation from "@/components/Home/UrgentDonation";
-import Newsletter from "@/components/Home/NewsLetter";
 import Testimonial from "@/components/Home/Testimonial";
-import Volunteer from "@/components/SharedComponent/Volunteer";
 import Services from "@/components/Home/Services";
 import WhyChooseUs from "@/components/Common/WhyChooseUs";
 import ProjectShowcase from "@/components/Home/ProjectShowcase";
