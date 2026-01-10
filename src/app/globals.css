@@ -153,3 +153,7 @@ body {
 .testimonial-vertical-slider .slick-list {
   padding-bottom: 1.5rem;
 }
+
+.hero-slider .slick-dots {
+  bottom: 1.5rem !important;
+}

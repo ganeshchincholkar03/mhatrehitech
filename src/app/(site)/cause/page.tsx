@@ -11,7 +11,7 @@ const Page = () => {
     <>
       <HeroSub title="Cause List" />
       <CauseList />
-      <Volunteer />
+      {/* <Volunteer /> */}
     </>
   );
 };
