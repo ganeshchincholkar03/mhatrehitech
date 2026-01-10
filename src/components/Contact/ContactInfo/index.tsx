@@ -26,13 +26,13 @@ const ContactInfo = () => {
                 For business inquiries and technical support, feel free to drop
                 us a line anytime.
               </p>
-              <Link
+              <a
                 href="mailto:info@mhatrehitech.com"
                 className="text-primary text-lg font-semibold flex items-center gap-2 hover:text-midnight_text dark:hover:text-white transition-all"
               >
                 info@mhatrehitech.com
                 <Icon icon="solar:arrow-right-up-linear" />
-              </Link>
+              </a>
             </div>
           </div>
 

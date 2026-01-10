@@ -97,12 +97,12 @@ const Footer: FC = () => {
                 📞 +91 92263 58377
               </Link>
 
-              <Link
+              <a
                 href="mailto:info@mhatrehitech.com"
                 className="block text-muted dark:text-white/60 hover:text-primary transition"
               >
                 ✉️ info@mhatrehitech.com
-              </Link>
+              </a>
               <p className="block text-muted dark:text-white/60 hover:text-primary transition">
                 🕝 Working Hours <br /> Mon – Sat : 9:00 AM – 6:00 PM
               </p>
@@ -133,7 +133,7 @@ const Footer: FC = () => {
           <p className="text-sm text-muted dark:text-white/60">
             Design by{" "}
             <Link
-              href="https://impulsebiz.com"
+              href="https://impulsebiz.in"
               target="_blank"
               className="font-semibold hover:text-primary transition"
             >

@@ -133,12 +133,12 @@ const Header: React.FC = () => {
                     <p className="text-xs text-muted dark:text-white/60">
                       Email us
                     </p>
-                    <Link
+                    <a
                       href="mailto:info@mhatrehitech.com"
                       className="text-sm font-semibold hover:text-primary"
                     >
                       info@mhatrehitech.com
-                    </Link>
+                    </a>
                   </div>
                 </div>
 
