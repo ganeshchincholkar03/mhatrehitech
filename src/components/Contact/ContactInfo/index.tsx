@@ -121,6 +121,14 @@ const ContactInfo = () => {
             referrerPolicy="no-referrer-when-downgrade"
             className="rounded-lg w-full"
           ></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.6197055664115!2d73.81464197496948!3d18.774578482368916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b505ed3b1fdd%3A0x7dbb4056ceeb1ed4!2sMhatre%20Hitech%20(india)%20pvt.%20ltd.!5e1!3m2!1sen!2sin!4v1768034159425!5m2!1sen!2sin"
+            width="1114"
+            height="477"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
       <div className="border-b border-solid border-border dark:border-dark_border"></div>
