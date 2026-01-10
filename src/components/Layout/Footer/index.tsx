@@ -5,6 +5,29 @@ import { footerLinks } from "@/app/api/data";
 import { Button } from "@material-tailwind/react";
 
 const Footer: FC = () => {
+  const menu: { id: number; label: string; href: string }[] = [
+    { id: 1, label: "Bending", href: "/services/bending" },
+    { id: 1, label: "Laser Cutting", href: "/services/laser-cutting" },
+    { id: 1, label: "Plastic Coating", href: "/services/plastic-coating" },
+    { id: 1, label: "Powder Coating", href: "/services/powder-coating" },
+    { id: 1, label: "Press Parts", href: "/services/press-parts" },
+    {
+      id: 1,
+      label: "Sheet Metal Components",
+      href: "/services/sheet-metal-wroks",
+    },
+    {
+      id: 1,
+      label: "Fabrication and Assembly",
+      href: "/services/fabrication-assembly",
+    },
+    {
+      id: 1,
+      label: "Painting and Protective Coating",
+      href: "/services/painting-and-protective",
+    },
+  ];
+
   return (
     <footer className="pt-16 dark:bg-dark bg-[url(https://mhatrehitech.com/backend/images/dots.png)]">
       <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
@@ -28,7 +51,7 @@ const Footer: FC = () => {
               {footerLinks.slice(0, 5).map((item, index) => (
                 <li key={index} className="mb-4">
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
                     before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
                     before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
@@ -46,70 +69,17 @@ const Footer: FC = () => {
               Products
             </h4>
             <ul className="space-y-4 flex flex-col items-start justify-center text-sm text-muted dark:text-white/60">
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
+              {menu.map((i) => (
+                <Link
+                  href={i.href}
+                  key={i.id}
+                  className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
                     before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
                     before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Bending
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Laser Cutting
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Plastic Coating
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Powder Coating
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Press Parts
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Sheet Metal Works
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Fabrication & Assembly
-              </Link>
-              <Link
-                href="#"
-                className="text-sm relative text-muted dark:text-white/60 hover:text-primary transition
-                    before:content-[''] before:absolute before:w-2 before:h-2 before:border-t-2 before:border-r-2
-                    before:top-1 before:-left-5 before:rotate-45 hover:before:border-primary"
-              >
-                Painting & Protective
-              </Link>
+                >
+                  {i.label}
+                </Link>
+              ))}
             </ul>
           </div>
 
@@ -133,6 +103,9 @@ const Footer: FC = () => {
               >
                 ✉️ info@mhatrehitech.com
               </Link>
+              <p className="block text-muted dark:text-white/60 hover:text-primary transition">
+                🕝 Working Hours <br /> Mon – Sat : 9:00 AM – 6:00 PM
+              </p>
               <Link
                 href="tel:+91-9226358377"
                 // className="block text-muted dark:text-white/60 hover:text-primary transition"

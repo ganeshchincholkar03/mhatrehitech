@@ -1,95 +1,108 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const ContactForm = () => {
-
   return (
-    <>
-      <section className="dark:bg-dark pb-24">
-        <div className="container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) px-4">
-          <div className="grid lg:grid-cols-12 grid-cols-1 gap-8">
-            <div className="lg:col-span-6 lg:order-1 order-2">
-              <h2 className="max-w-72 text-[40px] leading-tight font-bold mb-9 text-midnight_text dark:text-white">Get online consultation</h2>
-              <form className="flex flex-wrap w-full m-auto justify-between">
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="first-name" className="pb-3 inline-block text-base">First Name*</label>
-                    <input id="first-name"
-                      className="w-full text-base px-4 rounded-lg py-2.5 border-border dark:border-dark_border border-solid dark:text-white  dark:bg-dark border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                      type="text"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="last-name" className="pb-3 inline-block text-base">Last Name*</label>
-                    <input id="last-name"
-                      className="w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-dark border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                      type="text"
-                    />
-                  </div>
+    <section className="bg-grey dark:bg-darkmode py-20">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="grid lg:grid-cols-12 gap-10 items-center">
+          {/* Left: Form */}
+          <div className="lg:col-span-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-midnight_text dark:text-white">
+              Get in Touch
+            </h2>
+            <p className="text-muted dark:text-slate-300 mb-8">
+              Fill out the form and our team will get back to you as soon as
+              possible.
+            </p>
+            <form className="space-y-5">
+              <div className="flex gap-4 flex-col sm:flex-row">
+                <div className="flex-1">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-muted dark:text-slate-300 mb-1.5"
+                  >
+                    Name*
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="w-full rounded-md border border-border dark:border-dark_border bg-white dark:bg-darkmode px-3.5 py-2.5 text-sm text-midnight_text dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary"
+                    placeholder="Enter your full name"
+                  />
                 </div>
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="email" className="pb-3 inline-block text-base">Email address*</label>
-                    <input id="email"
-                      type="email"
-                      className="w-full text-base px-4 py-2.5 rounded-lg border-border dark:border-dark_border border-solid dark:text-white  dark:bg-dark border transition-all duration-500 focus:border-primary dark:focus:border-primary focus:border-solid focus:outline-0"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="SpecialistSpecialist" className="pb-3 inline-block text-base">Specialist*</label>
-                    <select id="SpecialistSpecialist" className="w-full text-base px-4 py-2.5 rounded-lg border-border dark:text-white border-solid dark:bg-dark border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0">
-                      <option value="">Choose a specialist</option>
-                      <option value="Baking &amp; Pastry">
-                        Choose a specialist
-                      </option>
-                      <option value="Exotic Cuisine">Exotic Cuisine</option>
-                      <option value="French Desserts">French Desserts</option>
-                      <option value="Seafood &amp; Wine">
-                        Choose a specialist
-                      </option>
-                    </select>
-                  </div>
+                <div className="flex-1">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-muted dark:text-slate-300 mb-1.5"
+                  >
+                    Email*
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full rounded-md border border-border dark:border-dark_border bg-white dark:bg-darkmode px-3.5 py-2.5 text-sm text-midnight_text dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary"
+                    placeholder="you@example.com"
+                  />
                 </div>
-                <div className="sm:flex gap-3 w-full">
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="date" className="pb-3 inline-block text-base">Date*</label>
-                    <input id="date"
-                      className="w-full text-base px-4 rounded-lg  py-2.5 outline-hidden dark:text-white dark:bg-dark border-border border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0"
-                      type="date"
-                    />
-                  </div>
-                  <div className="mx-0 my-2.5 flex-1">
-                    <label htmlFor="time" className="pb-3 inline-block text-base">Time*</label>
-                    <input
-                     id="time"
-                      className="w-full text-base px-4 rounded-lg py-2.5 border-border outline-hidden dark:text-white dark:bg-dark border-solid border transition-all duration-500 focus:border-primary dark:focus:border-primary dark:border-dark_border focus:border-solid focus:outline-0"
-                      type="time"
-                    />
-                  </div>
-                </div>
-                <div className="mx-0 my-2.5 w-full">
-                  <Link href="#" className="bg-linear-to-r from-primary to-secondary rounded-lg text-white py-4 px-8 mt-4 inline-block hover:from-transparent hover:to-transparent hover:text-primary border hover:border-primary" type="submit">
-                    Make an appointment
-                  </Link>
-                </div>
-              </form>
-            </div>
-            <div className="lg:col-span-6 lg:order-2 order-1">
-              <Image
-                src="/images/contact-page/contact.jpg"
-                alt="Contact"
-                width={1300}
-                height={0}
-                quality={100}
-                style={{ width: '100%', height: 'auto' }}
-                className="bg-no-repeat bg-contain"
-              />
-            </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-muted dark:text-slate-300 mb-1.5"
+                >
+                  Phone*
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  className="w-full rounded-md border border-border dark:border-dark_border bg-white dark:bg-darkmode px-3.5 py-2.5 text-sm text-midnight_text dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary"
+                  placeholder="+91 00000 00000"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-muted dark:text-slate-300 mb-1.5"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="w-full rounded-md border border-border dark:border-dark_border bg-white dark:bg-darkmode px-3.5 py-2.5 text-sm text-midnight_text dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-primary resize-none"
+                  placeholder="How can we help you?"
+                />
+              </div>
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-cause-shadow hover:bg-darkprimary transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          {/* Right: Image */}
+          <div className="lg:col-span-6">
+            <Image
+              src="/images/contact-page/contact.jpg"
+              alt="Contact"
+              width={900}
+              height={600}
+              quality={100}
+              className="rounded-xl shadow-cause-shadow w-full object-cover"
+            />
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

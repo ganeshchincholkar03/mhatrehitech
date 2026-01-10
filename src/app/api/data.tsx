@@ -206,18 +206,22 @@ export const Eventdata: {
   },
 ];
 
-export const footerLinks: { link: string }[] = [
+export const footerLinks: { link: string; href: string }[] = [
   {
     link: "About Us",
+    href: "/about",
   },
   {
-    link: "Servies",
+    link: "Services",
+    href: "/services",
   },
   {
     link: "Projects",
+    href: "/projects",
   },
   {
-    link: "Gallery",
+    link: "Contact",
+    href: "/contact",
   },
 ];
 
@@ -421,7 +425,7 @@ export const services: {
   {
     id: 6,
     slug: "sheet-metal-wroks",
-    image: "/images/new-images/services/SheetMetal.jpg",
+    image: "/images/new-images/services/sheetMetal.jpg",
     title: "Sheet Metal Components",
     text: "We are manufacturing a wide range of our Sheet Metal Components as per the Customised requirements and specifications.",
     specs: {

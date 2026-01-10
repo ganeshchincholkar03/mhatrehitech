@@ -6,6 +6,7 @@ import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
 import WhyChooseUs from "@/components/Common/WhyChooseUs";
+import GrowWithUsSection from "@/components/Home/GrowWithUs";
 export const metadata: Metadata = {
   title: "Contact | Mhatre-Hitech",
 };
@@ -13,9 +14,15 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <HeroSub title="Contact Us" />
+      <HeroSub
+        title="Contact Us"
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+        ]}
+      />
       <ContactInfo />
-      <ContactForm />
+      <GrowWithUsSection />
       <Location />
       <WhyChooseUs />
       {/* <Volunteer /> */}
