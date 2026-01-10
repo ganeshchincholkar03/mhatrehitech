@@ -7,6 +7,7 @@ import WhyChooseUs from "@/components/Common/WhyChooseUs";
 import ProjectShowcase from "@/components/Home/ProjectShowcase";
 import GrowWithUsSection from "@/components/Home/GrowWithUs";
 import TeamSection from "@/components/Home/TeamSection";
+import HomeAbout from "@/components/Home/HomeAbout";
 export const metadata: Metadata = {
   title: "Mhatre Hitech",
 };
@@ -18,6 +19,7 @@ export default function Home() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.08),transparent_50%)]" />
 
       <Hero />
+      <HomeAbout />
       <Services />
       {/* <Causes /> */}
       {/* <FutureEvents /> */}
